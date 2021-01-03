@@ -27,6 +27,9 @@ extern "C" {
 /*=====[Macros de definicion de constantes publicas]=========================*/
 
 #define PI 3.14
+#define BAJA    204000000
+#define MEDIA   1000000
+#define ALTA    300000
 
 /*=====[Macros estilo funcion publicas]======================================*/
 
@@ -45,29 +48,40 @@ typedef void (*callBackFuncPtr_t)(void *);
 
 // Tipo de datos enumerado
 typedef enum {
-   GPIO_INPUT, 
-   GPIO_OUTPUT
-} gpioMode_t;
+   velocidad_baja,
+   velocidad_media,
+   velocidad_alta
+} steppermotor_l297_velocidad;
 
-typedef enum {
-
-} hmc5883lRegisters_t;
 
 // Tipo de datos estructurados, union o campo de bits
 typedef struct {
 
+	uint32_t cantidad_pasos;
+	uint32_t contador_pasos;
+	uint8_t  Numeros_pasosxvuelta;
+	float   angulo_resolucion;
 	gpioMap_t half_full_step;
 	gpioMap_t reset;
-	gpioMap_t direccion;
+	gpioMap_t direccion;           //sentido agujas del reloj Horario (CW) o antihorario (CCW)
 	gpioMap_t enable;
 	gpioMap_t control;
-
+	steppermotor_l297_velocidad velocidad;
 } steppermotor_l297_t;
+
+steppermotor_l297_t  steppermotor;
 
 
 /*=====[Prototipos de funciones publicas]====================================*/
 
-bool_t rtcInit( rtc_t* rtc );
+//Funcion de inicializacion del motor paso a paso a utilizar, se pasa una structura , los numeros de pasos
+//por vuelta y el angulo de resolucion
+//Tambien esta funcion inicializa el Timer() para generar el clock
+//seguir agregando lo que hace el timer
+
+void stepperMotorL297Init(steppermotor_l297_t *steppermotor,uint32_t numerodepasosxvuelta);
+
+
 
 /*=====[Prototipos de funciones publicas de interrupcion]====================*/
 

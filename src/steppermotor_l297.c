@@ -4,11 +4,16 @@
  * Licencia: Texto de la licencia o al menos el nombre y un link
          (ejemplo: BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>)
  *
- * Version: 0.0.0
- * Fecha de creacion: YYYY/MM/DD
+ * Version: 1.0.0
+ * Fecha de creacion: 2021/01/02
  */
+/* Motor utilizado es el PM5555L-048, de cuya hojas de datos se saca que:
+ * Numeros de pasos por rotacion es: 48 (7,5°/por paso), esto significa que da una vuelta completa
+ * 360° en 48 pasos.
+ * ver hoja de datos en carpeta
+*/
 
-/*=====[Inclusion de su propia cabecera]=====================================*/
+/*====[Inclusion de su propia cabecera]=====================================*/
 
 #include "steppermotor_l297.h"
 
@@ -35,20 +40,10 @@ typedef uint32_t gpioRegister_t;
 typedef void (*FuncPtrPrivado_t)(void *);
 
 // Tipo de datos enumerado
-typedef enum {
-   GPIO_INPUT_PULLUP, 
-   GPIO_INPUT_PULLDOWN,
-   GPIO_REPEATER
-} gpioLPC4337Modes_t;
+
 
 // Tipo de datos estructua, union o campo de bits
-typedef struct {
-   uint8_t scuPort;
-   uint8_t scuPin;
-   uint8_t func;
-   uint8_t gpioPort;
-   uint8_t gpioPin;
-} gpioLpc4337_t;
+
 
 /*=====[Definiciones de Variables globales publicas externas]================*/
 
@@ -68,9 +63,46 @@ static void funPrivada(void);
 
 /*=====[Implementaciones de funciones publicas]==============================*/
 
-bool_t rtcInit( rtc_t* rtc )
-{
-   // ...
+void stepperMotorL297Init(steppermotor_l297_t *steppermotor,
+		                  uint32_t numerodepasosxvuelta){
+
+	if (numerodepasosxvuelta!=0){
+		steppermotor->Numeros_pasosxvuelta=numerodepasosxvuelta;
+	    steppermotor->angulo_resolucion=360/(steppermotor->Numeros_pasosxvuelta); //Esto me da la resolucion que en este caso es 360/48=7,5°
+	    }
+	else {
+		printf("El numero de pasos por vuelta no puede ser cero");
+		}
+
+//Aqui tambien tendria que ir la funcion del sensor de poscion en cero, o se cuando arranque
+//que verfique que el motor se encuentra en cero
+}
+
+void stepperMotorL297SetVelocidad(steppermotor_l297_t *steppermotor,steppermotor_l297_velocidad velocidad){
+	steppermotor->velocidad=velocidad;
+
+//Aqui iria el cambio del valor en set math para variar la velocidad del clock
+
+	switch (steppermotor->velocidad){
+	case velocidad_baja:
+		//Chip_TIMER_Reset( SIGNAL_TIMER );
+		Chip_TIMER_SetMatch( SIGNAL_TIMER,SIGNAL_MATCH_NUMBER,BAJA);
+		break;
+
+	case velocidad_media:
+		//Chip_TIMER_Reset( SIGNAL_TIMER );
+		Chip_TIMER_SetMatch( SIGNAL_TIMER,SIGNAL_MATCH_NUMBER,MEDIA);
+		break;
+
+	case velocidad_alta:
+		//Chip_TIMER_Reset( SIGNAL_TIMER );
+		Chip_TIMER_SetMatch( SIGNAL_TIMER,SIGNAL_MATCH_NUMBER,ALTA);
+		break;
+
+	default:
+		Chip_TIMER_SetMatch( SIGNAL_TIMER,SIGNAL_MATCH_NUMBER,BAJA);
+		break;
+	}
 }
 
 /*=====[Implementaciones de funciones de interrupcion publicas]==============*/
