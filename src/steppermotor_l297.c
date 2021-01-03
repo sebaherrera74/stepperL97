@@ -82,6 +82,8 @@ void stepperMotorL297SetVelocidad(steppermotor_l297_t *steppermotor,steppermotor
 	steppermotor->velocidad=velocidad;
 
 //Aqui iria el cambio del valor en set math para variar la velocidad del clock
+	//Este seteo d elas velocidades ira acopañado de cuando se colocque el motor y ver
+	//los resultados de los ensayos
 
 	switch (steppermotor->velocidad){
 	case velocidad_baja:

@@ -4,7 +4,7 @@
  * Licencia: Texto de la licencia o al menos el nombre y un link
          (ejemplo: BSD-3-Clause <https://opensource.org/licenses/BSD-3-Clause>)
  *
- * Version: 0.0.0
+ * Version: 1.0.0
  * Fecha de creacion: 2021/01/02
  */
 
