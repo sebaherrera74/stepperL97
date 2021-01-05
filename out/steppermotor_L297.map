@@ -229,8 +229,30 @@ Discarded input sections
  .text          0x0000000000000000        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .data          0x0000000000000000        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .bss           0x0000000000000000        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.signalInit
+                0x0000000000000000       0x70 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .text.stepperMotorL297Init
-                0x0000000000000000       0x2c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+                0x0000000000000000       0x6c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.stepperMotorL297SetDireccionGiro
+                0x0000000000000000       0x36 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.stepperMotorL297GetDireccionGiro
+                0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.stepperMotorL297SetEnable
+                0x0000000000000000       0x36 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.stepperMotorL297GetEnable
+                0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.stepperMotorL297SetVelocidad
+                0x0000000000000000       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .text.stepperMotorL297MoveXNanometers
+                0x0000000000000000        0x2 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .bss.DiferenciaPosicion
+                0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .bss.PosicionActual
+                0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .bss.PosicionDeseada
+                0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .bss.countPasos
+                0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .bss.varGlobalPublica
                 0x0000000000000000        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .rodata.stepperMotorL297Init.str1.4
@@ -16610,7 +16632,7 @@ END GROUP
  *(.rodata.$Flash2*)
  *(.rodata.$MFlashB512*)
 
-.text           0x000000001a000000     0x1ac0
+.text           0x000000001a000000     0x1aec
  FILL mask 0xff
                 0x000000001a000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -16623,19 +16645,19 @@ END GROUP
                 0x000000001a000114                . = ALIGN (0x4)
                 0x000000001a000114                __section_table_start = .
                 0x000000001a000114                __data_section_table = .
-                0x000000001a000114        0x4 LONG 0x1a001acc LOADADDR (.data)
+                0x000000001a000114        0x4 LONG 0x1a001af8 LOADADDR (.data)
                 0x000000001a000118        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000001a00011c        0x4 LONG 0x48 SIZEOF (.data)
-                0x000000001a000120        0x4 LONG 0x1a001acc LOADADDR (.data_RAM2)
+                0x000000001a000120        0x4 LONG 0x1a001af8 LOADADDR (.data_RAM2)
                 0x000000001a000124        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x000000001a000128        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x000000001a00012c        0x4 LONG 0x1a001acc LOADADDR (.data_RAM3)
+                0x000000001a00012c        0x4 LONG 0x1a001af8 LOADADDR (.data_RAM3)
                 0x000000001a000130        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x000000001a000134        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x000000001a000138        0x4 LONG 0x1a001acc LOADADDR (.data_RAM4)
+                0x000000001a000138        0x4 LONG 0x1a001af8 LOADADDR (.data_RAM4)
                 0x000000001a00013c        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x000000001a000140        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x000000001a000144        0x4 LONG 0x1a001acc LOADADDR (.data_RAM5)
+                0x000000001a000144        0x4 LONG 0x1a001af8 LOADADDR (.data_RAM5)
                 0x000000001a000148        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x000000001a00014c        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x000000001a000150                __data_section_table_end = .
@@ -16667,7 +16689,6 @@ END GROUP
                 0x000000001a0001a8                bss_init
  .after_vectors
                 0x000000001a0001ba        0x2 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
-                0x000000001a0001ba                TIMER2_IRQHandler
                 0x000000001a0001ba                RIT_IRQHandler
                 0x000000001a0001ba                ADCHS_IRQHandler
                 0x000000001a0001ba                FLASH_EEPROM_IRQHandler
@@ -16725,286 +16746,289 @@ END GROUP
                 0x000000001a000300                PROVIDE (__CRP_WORD_END__ = .)
                 0x0000000000000001                ASSERT (! ((__CRP_WORD_START__ == __CRP_WORD_END__)), Linker CRP Enabled, but no CRP_WORD provided within application)
  *(.text*)
+ .text.TIMER2_IRQHandler
+                0x000000001a000300       0x2c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+                0x000000001a000300                TIMER2_IRQHandler
  .text.UART0_IRQHandler
-                0x000000001a000300        0x2 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
-                0x000000001a000300                UART0_IRQHandler
- .text.main     0x000000001a000302       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
-                0x000000001a000302                main
+                0x000000001a00032c        0x2 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+                0x000000001a00032c                UART0_IRQHandler
+ .text.main     0x000000001a00032e       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+                0x000000001a00032e                main
  .text.initialise_monitor_handles
-                0x000000001a000318        0x2 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a000318                initialise_monitor_handles
- *fill*         0x000000001a00031a        0x2 ff
+                0x000000001a000344        0x2 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a000344                initialise_monitor_handles
+ *fill*         0x000000001a000346        0x2 ff
  .text.Reset_Handler
-                0x000000001a00031c       0x88 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a00031c                Reset_Handler
- .text._fini    0x000000001a0003a4        0x2 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a0003a4                _fini
- .text._init    0x000000001a0003a6        0x2 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a0003a6                _init
+                0x000000001a000348       0x88 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a000348                Reset_Handler
+ .text._fini    0x000000001a0003d0        0x2 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0003d0                _fini
+ .text._init    0x000000001a0003d2        0x2 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0003d2                _init
  .text.Board_LED_Init
-                0x000000001a0003a8       0x44 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0003d4       0x44 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_TEC_Init
-                0x000000001a0003ec       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000418       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_GPIO_Init
-                0x000000001a00042c       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000458       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_ADC_Init
-                0x000000001a00046c       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000498       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_SPI_Init
-                0x000000001a00049c       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0004c8       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_I2C_Init
-                0x000000001a0004d4       0x24 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000500       0x24 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_Debug_Init
-                0x000000001a0004f8       0x24 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0004f8                Board_Debug_Init
+                0x000000001a000524       0x24 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000524                Board_Debug_Init
  .text.Board_Init
-                0x000000001a00051c       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00051c                Board_Init
+                0x000000001a000548       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000548                Board_Init
  .text.__stdio_init
-                0x000000001a00054c        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00054c                __stdio_init
+                0x000000001a000578        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000578                __stdio_init
  .text.Board_SetupMuxing
-                0x000000001a000554       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a000554                Board_SetupMuxing
+                0x000000001a000580       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000580                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x000000001a00058c       0x6c misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a00058c                Board_SetupClocking
+                0x000000001a0005b8       0x6c misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a0005b8                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000001a0005f8        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a0005f8                Board_SystemInit
+                0x000000001a000624        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000624                Board_SystemInit
  .text.Chip_UART_GetIndex
-                0x000000001a000604       0x2c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a000630       0x2c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .text.Chip_UART_Init
-                0x000000001a000630       0x54 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a000630                Chip_UART_Init
+                0x000000001a00065c       0x54 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a00065c                Chip_UART_Init
  .text.Chip_UART_SetBaudFDR
-                0x000000001a000684       0xdc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a000684                Chip_UART_SetBaudFDR
+                0x000000001a0006b0       0xdc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0006b0                Chip_UART_SetBaudFDR
  .text.Chip_ADC_GetClockIndex
-                0x000000001a000760       0x14 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a00078c       0x14 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.getClkDiv
-                0x000000001a000774       0x32 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- *fill*         0x000000001a0007a6        0x2 ff
+                0x000000001a0007a0       0x32 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ *fill*         0x000000001a0007d2        0x2 ff
  .text.Chip_ADC_Init
-                0x000000001a0007a8       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0007a8                Chip_ADC_Init
+                0x000000001a0007d4       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0007d4                Chip_ADC_Init
  .text.Chip_ADC_SetSampleRate
-                0x000000001a0007e8       0x32 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0007e8                Chip_ADC_SetSampleRate
+                0x000000001a000814       0x32 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000814                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x000000001a00081a        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a00081a                Chip_ADC_SetResolution
- *fill*         0x000000001a000826        0x2 ff
+                0x000000001a000846        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000846                Chip_ADC_SetResolution
+ *fill*         0x000000001a000852        0x2 ff
  .text.SystemCoreClockUpdate
-                0x000000001a000828       0x14 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
-                0x000000001a000828                SystemCoreClockUpdate
+                0x000000001a000854       0x14 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x000000001a000854                SystemCoreClockUpdate
  .text.pll_calc_divs
-                0x000000001a00083c       0xa0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000868       0xa0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.pll_get_frac
-                0x000000001a0008dc      0x10c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000908      0x10c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_FindBaseClock
-                0x000000001a0009e8       0x4c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000a14       0x4c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_EnableCrystal
-                0x000000001a000a34       0x4c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000a34                Chip_Clock_EnableCrystal
+                0x000000001a000a60       0x4c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000a60                Chip_Clock_EnableCrystal
  .text.Chip_Clock_GetDividerSource
-                0x000000001a000a80       0x1c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000a80                Chip_Clock_GetDividerSource
+                0x000000001a000aac       0x1c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000aac                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x000000001a000a9c       0x1c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000a9c                Chip_Clock_GetDividerDivisor
+                0x000000001a000ac8       0x1c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000ac8                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x000000001a000ab8       0xb8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000ab8                Chip_Clock_GetClockInputHz
+                0x000000001a000ae4       0xb8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000ae4                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_CalcMainPLLValue
-                0x000000001a000b70       0x80 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000b70                Chip_Clock_CalcMainPLLValue
+                0x000000001a000b9c       0x80 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000b9c                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x000000001a000bf0       0x6c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000bf0                Chip_Clock_GetMainPLLHz
+                0x000000001a000c1c       0x6c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000c1c                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDivRate
-                0x000000001a000c5c       0x22 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x000000001a000c7e        0x2 ff
+                0x000000001a000c88       0x22 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x000000001a000caa        0x2 ff
  .text.Chip_Clock_SetBaseClock
-                0x000000001a000c80       0x58 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000c80                Chip_Clock_SetBaseClock
+                0x000000001a000cac       0x58 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000cac                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x000000001a000cd8       0x26 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000cd8                Chip_Clock_GetBaseClock
+                0x000000001a000d04       0x26 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d04                Chip_Clock_GetBaseClock
  .text.Chip_Clock_GetBaseClocktHz
-                0x000000001a000cfe        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000cfe                Chip_Clock_GetBaseClocktHz
- *fill*         0x000000001a000d0a        0x2 ff
+                0x000000001a000d2a        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d2a                Chip_Clock_GetBaseClocktHz
+ *fill*         0x000000001a000d36        0x2 ff
  .text.Chip_Clock_EnableOpts
-                0x000000001a000d0c       0x3c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000d0c                Chip_Clock_EnableOpts
+                0x000000001a000d38       0x3c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d38                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x000000001a000d48       0x34 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000d48                Chip_Clock_Enable
+                0x000000001a000d74       0x34 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d74                Chip_Clock_Enable
  .text.Chip_Clock_GetRate
-                0x000000001a000d7c       0x4c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000d7c                Chip_Clock_GetRate
+                0x000000001a000da8       0x4c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000da8                Chip_Clock_GetRate
  .text.Chip_SetupCoreClock
-                0x000000001a000dc8      0x158 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
-                0x000000001a000dc8                Chip_SetupCoreClock
+                0x000000001a000df4      0x158 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a000df4                Chip_SetupCoreClock
  .text.Chip_GPIO_Init
-                0x000000001a000f20        0x2 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
-                0x000000001a000f20                Chip_GPIO_Init
- *fill*         0x000000001a000f22        0x2 ff
+                0x000000001a000f4c        0x2 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x000000001a000f4c                Chip_GPIO_Init
+ *fill*         0x000000001a000f4e        0x2 ff
  .text.Chip_SSP_GetClockIndex
-                0x000000001a000f24       0x14 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a000f50       0x14 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_GetPeriphClockIndex
-                0x000000001a000f38       0x18 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a000f64       0x18 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_SetClockRate
-                0x000000001a000f50       0x12 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a000f50                Chip_SSP_SetClockRate
+                0x000000001a000f7c       0x12 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a000f7c                Chip_SSP_SetClockRate
  .text.Chip_SSP_SetBitRate
-                0x000000001a000f62       0x3e misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a000f62                Chip_SSP_SetBitRate
+                0x000000001a000f8e       0x3e misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a000f8e                Chip_SSP_SetBitRate
  .text.Chip_SSP_Init
-                0x000000001a000fa0       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a000fa0                Chip_SSP_Init
+                0x000000001a000fcc       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a000fcc                Chip_SSP_Init
  .text.Chip_I2C_EventHandler
-                0x000000001a000fd8       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a000fd8                Chip_I2C_EventHandler
+                0x000000001a001004       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001004                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x000000001a000ff8       0x24 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a000ff8                Chip_I2C_Init
+                0x000000001a001024       0x24 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001024                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x000000001a00101c       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a00101c                Chip_I2C_SetClockRate
+                0x000000001a001048       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001048                Chip_I2C_SetClockRate
  .text.SystemInit
-                0x000000001a001054       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
-                0x000000001a001054                SystemInit
+                0x000000001a001080       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x000000001a001080                SystemInit
  .text.cyclesCounterInit
-                0x000000001a00108c       0x1c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
-                0x000000001a00108c                cyclesCounterInit
+                0x000000001a0010b8       0x1c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+                0x000000001a0010b8                cyclesCounterInit
  .text.tickRead
-                0x000000001a0010a8        0xc misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a0010a8                tickRead
+                0x000000001a0010d4        0xc misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a0010d4                tickRead
  .text.tickPowerSet
-                0x000000001a0010b4       0x18 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a0010b4                tickPowerSet
+                0x000000001a0010e0       0x18 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a0010e0                tickPowerSet
  .text.tickInit
-                0x000000001a0010cc       0x7c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a0010cc                tickInit
+                0x000000001a0010f8       0x7c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a0010f8                tickInit
  .text.SysTick_Handler
-                0x000000001a001148       0x2c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a001148                SysTick_Handler
+                0x000000001a001174       0x2c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a001174                SysTick_Handler
  .text.gpioObtainPinInit
-                0x000000001a001174       0x34 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0011a0       0x34 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
  .text.gpioInit
-                0x000000001a0011a8      0x1ac misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0011a8                gpioInit
+                0x000000001a0011d4      0x1ac misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0011d4                gpioInit
  .text.gpioWrite
-                0x000000001a001354       0x6a misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a001354                gpioWrite
+                0x000000001a001380       0x6a misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a001380                gpioWrite
  .text.gpioRead
-                0x000000001a0013be       0x68 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0013be                gpioRead
+                0x000000001a0013ea       0x68 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0013ea                gpioRead
  .text.gpioToggle
-                0x000000001a001426       0x16 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a001426                gpioToggle
+                0x000000001a001452       0x16 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a001452                gpioToggle
  .text.USB0_IRQHandler
-                0x000000001a00143c       0x1c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
-                0x000000001a00143c                USB0_IRQHandler
+                0x000000001a001468       0x1c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+                0x000000001a001468                USB0_IRQHandler
  .text.boardInit
-                0x000000001a001458       0x74 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
-                0x000000001a001458                boardInit
- .text.delay    0x000000001a0014cc       0x38 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
-                0x000000001a0014cc                delay
- .text          0x000000001a001504       0x30 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x000000001a001504                __aeabi_uldivmod
+                0x000000001a001484       0x74 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+                0x000000001a001484                boardInit
+ .text.delay    0x000000001a0014f8       0x38 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+                0x000000001a0014f8                delay
+ .text          0x000000001a001530       0x30 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x000000001a001530                __aeabi_uldivmod
  .text.__udivmoddi4
-                0x000000001a001534      0x2d0 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a001534                __udivmoddi4
- .text          0x000000001a001804        0x4 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x000000001a001804                __aeabi_ldiv0
-                0x000000001a001804                __aeabi_idiv0
+                0x000000001a001560      0x2d0 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a001560                __udivmoddi4
+ .text          0x000000001a001830        0x4 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x000000001a001830                __aeabi_ldiv0
+                0x000000001a001830                __aeabi_idiv0
  .text.__libc_init_array
-                0x000000001a001808       0x48 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
-                0x000000001a001808                __libc_init_array
- .text.memset   0x000000001a001850       0x10 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
-                0x000000001a001850                memset
+                0x000000001a001834       0x48 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                0x000000001a001834                __libc_init_array
+ .text.memset   0x000000001a00187c       0x10 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                0x000000001a00187c                memset
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.ExtRateIn
-                0x000000001a001860        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a001860                ExtRateIn
- .rodata.GpioButtons
-                0x000000001a001864        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .rodata.GpioLeds
-                0x000000001a00186c        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .rodata.GpioPorts
-                0x000000001a001878       0x12 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- *fill*         0x000000001a00188a        0x2 ff
- .rodata.OscRateIn
                 0x000000001a00188c        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00188c                OscRateIn
+                0x000000001a00188c                ExtRateIn
+ .rodata.GpioButtons
+                0x000000001a001890        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .rodata.GpioLeds
+                0x000000001a001898        0xc misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .rodata.GpioPorts
+                0x000000001a0018a4       0x12 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ *fill*         0x000000001a0018b6        0x2 ff
+ .rodata.OscRateIn
+                0x000000001a0018b8        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0018b8                OscRateIn
  .rodata.InitClkStates
-                0x000000001a001890        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a0018bc        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.pinmuxing
-                0x000000001a001894       0x74 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a0018c0       0x74 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.UART_BClock
-                0x000000001a001908        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a001934        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.UART_PClock
-                0x000000001a001910        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .rodata        0x000000001a001918        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a00193c        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .rodata        0x000000001a001944        0x4 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.Chip_Clock_SetDivider.str1.4
-                0x000000001a00191c        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001948        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
                                           0x6 (size before relaxing)
  .rodata.periph_to_base
-                0x000000001a001924       0x6c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001950       0x6c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.InitClkStates
-                0x000000001a001990       0x48 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a0019bc       0x48 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .rodata.gpioPinsInit
-                0x000000001a0019d8       0xe6 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0019d8                gpioPinsInit
-                0x000000001a001ac0                . = ALIGN (0x4)
- *fill*         0x000000001a001abe        0x2 ff
+                0x000000001a001a04       0xe6 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a001a04                gpioPinsInit
+                0x000000001a001aec                . = ALIGN (0x4)
+ *fill*         0x000000001a001aea        0x2 ff
 
-.glue_7         0x000000001a001ac0        0x0
- .glue_7        0x000000001a001ac0        0x0 linker stubs
+.glue_7         0x000000001a001aec        0x0
+ .glue_7        0x000000001a001aec        0x0 linker stubs
 
-.glue_7t        0x000000001a001ac0        0x0
- .glue_7t       0x000000001a001ac0        0x0 linker stubs
+.glue_7t        0x000000001a001aec        0x0
+ .glue_7t       0x000000001a001aec        0x0 linker stubs
 
-.vfp11_veneer   0x000000001a001ac0        0x0
- .vfp11_veneer  0x000000001a001ac0        0x0 linker stubs
+.vfp11_veneer   0x000000001a001aec        0x0
+ .vfp11_veneer  0x000000001a001aec        0x0 linker stubs
 
-.v4_bx          0x000000001a001ac0        0x0
- .v4_bx         0x000000001a001ac0        0x0 linker stubs
+.v4_bx          0x000000001a001aec        0x0
+ .v4_bx         0x000000001a001aec        0x0 linker stubs
 
-.iplt           0x000000001a001ac0        0x0
- .iplt          0x000000001a001ac0        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
-                0x000000001a001ac0                . = ALIGN (0x4)
+.iplt           0x000000001a001aec        0x0
+ .iplt          0x000000001a001aec        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+                0x000000001a001aec                . = ALIGN (0x4)
 
-.preinit_array  0x000000001a001ac0        0x0
-                0x000000001a001ac0                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000000001a001aec        0x0
+                0x000000001a001aec                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x000000001a001ac0                PROVIDE (__preinit_array_end = .)
+                0x000000001a001aec                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000001a001ac0        0x4
-                0x000000001a001ac0                PROVIDE (__init_array_start = .)
+.init_array     0x000000001a001aec        0x4
+                0x000000001a001aec                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x000000001a001ac0        0x4 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
-                0x000000001a001ac4                PROVIDE (__init_array_end = .)
-                0x000000001a001ac4                . = ALIGN (0x4)
+ .init_array    0x000000001a001aec        0x4 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+                0x000000001a001af0                PROVIDE (__init_array_end = .)
+                0x000000001a001af0                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001a001ac4                __exidx_start = .
+                0x000000001a001af0                __exidx_start = .
 
-.ARM.exidx      0x000000001a001ac4        0x8
+.ARM.exidx      0x000000001a001af0        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.text.__udivmoddi4
-                0x000000001a001ac4        0x8 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a001acc                __exidx_end = .
-                0x000000001a001acc                _etext = .
+                0x000000001a001af0        0x8 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a001af8                __exidx_end = .
+                0x000000001a001af8                _etext = .
 
-.rel.dyn        0x000000001a001acc        0x0
- .rel.iplt      0x000000001a001acc        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+.rel.dyn        0x000000001a001af8        0x0
+ .rel.iplt      0x000000001a001af8        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 
-.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a001acc
+.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a001af8
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -17012,7 +17036,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x0000000010080000                . = ALIGN (0x4)
 
-.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a001acc
+.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a001af8
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -17020,7 +17044,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a001acc
+.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a001af8
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -17028,7 +17052,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x0000000020008000                . = ALIGN (0x4)
 
-.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a001acc
+.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a001af8
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -17042,7 +17066,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x48 load address 0x000000001a001acc
+.data           0x0000000010000000       0x48 load address 0x000000001a001af8
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -17058,7 +17082,7 @@ END GROUP
                 0x0000000010000048                . = ALIGN (0x4)
                 0x0000000010000048                _edata = .
 
-.igot.plt       0x0000000010000048        0x0 load address 0x000000001a001b14
+.igot.plt       0x0000000010000048        0x0 load address 0x000000001a001b40
  .igot.plt      0x0000000010000048        0x0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 
 .bss_RAM2       0x0000000010080000        0x0
@@ -17084,11 +17108,11 @@ END GROUP
 .bss            0x0000000010000048       0x28
                 0x0000000010000048                _bss = .
  *(.bss*)
+ .bss.countIrq  0x0000000010000048        0x4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .bss.audio_usb_pll_freq
-                0x0000000010000048        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001000004c        0x8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .bss.callBackFuncParams
-                0x0000000010000050        0x4 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- *fill*         0x0000000010000054        0x4 
+                0x0000000010000054        0x4 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
  .bss.tickCounter
                 0x0000000010000058        0x8 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
  .bss.tickHookFunction
@@ -17130,372 +17154,372 @@ END GROUP
                 0x0000000010000070                _end_noinit = .
                 0x0000000010000070                PROVIDE (_pvHeapStart = .)
                 0x0000000010008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0xffffffff53ff7572                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0xffffffff53ff7546                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(misProgramas/steppermotor_L297/out/steppermotor_L297.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x1c414
- .debug_info    0x0000000000000000     0x2728 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_info    0x0000000000002728     0x26fa misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
- .debug_info    0x0000000000004e22      0x35d misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_info    0x000000000000517f     0x10c3 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_info    0x0000000000006242     0x23f7 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_info    0x0000000000008639     0x15d2 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_info    0x0000000000009c0b     0x1981 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_info    0x000000000000b58c      0xc0c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_info    0x000000000000c198      0xc97 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_info    0x000000000000ce2f     0x1b68 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_info    0x000000000000e997      0xb39 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_info    0x000000000000f4d0      0x232 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_info    0x000000000000f702     0x1a33 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_info    0x0000000000011135     0x159b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_info    0x00000000000126d0       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_info    0x0000000000012710      0xc76 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_info    0x0000000000013386       0x76 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_info    0x00000000000133fc      0xf6a misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_info    0x0000000000014366     0x15a7 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_info    0x000000000001590d     0x1cdd misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_info    0x00000000000175ea     0x357f misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_info    0x000000000001ab69      0xc5d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_info    0x000000000001b7c6      0xc4e misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_info     0x0000000000000000    0x1d3d7
+ .debug_info    0x0000000000000000     0x3683 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_info    0x0000000000003683     0x2762 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+ .debug_info    0x0000000000005de5      0x35d misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_info    0x0000000000006142     0x10c3 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_info    0x0000000000007205     0x23f7 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_info    0x00000000000095fc     0x15d2 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_info    0x000000000000abce     0x1981 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_info    0x000000000000c54f      0xc0c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_info    0x000000000000d15b      0xc97 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_info    0x000000000000ddf2     0x1b68 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_info    0x000000000000f95a      0xb39 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_info    0x0000000000010493      0x232 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_info    0x00000000000106c5     0x1a33 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_info    0x00000000000120f8     0x159b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_info    0x0000000000013693       0x40 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_info    0x00000000000136d3      0xc76 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_info    0x0000000000014349       0x76 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_info    0x00000000000143bf      0xf6a misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_info    0x0000000000015329     0x15a7 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_info    0x00000000000168d0     0x1cdd misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_info    0x00000000000185ad     0x357f misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_info    0x000000000001bb2c      0xc5d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_info    0x000000000001c789      0xc4e misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_abbrev   0x0000000000000000     0x3f5a
- .debug_abbrev  0x0000000000000000      0x2ff misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_abbrev  0x00000000000002ff      0x2cd misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
- .debug_abbrev  0x00000000000005cc      0x127 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_abbrev  0x00000000000006f3      0x301 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_abbrev  0x00000000000009f4      0x512 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_abbrev  0x0000000000000f06      0x352 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_abbrev  0x0000000000001258      0x42c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_abbrev  0x0000000000001684      0x219 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_abbrev  0x000000000000189d      0x1ee misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_abbrev  0x0000000000001a8b      0x3ef misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_abbrev  0x0000000000001e7a      0x245 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_abbrev  0x00000000000020bf      0x114 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_abbrev  0x00000000000021d3      0x38a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_abbrev  0x000000000000255d      0x3af misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_abbrev  0x000000000000290c       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_abbrev  0x0000000000002944      0x25b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_abbrev  0x0000000000002b9f       0x78 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_abbrev  0x0000000000002c17      0x26c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_abbrev  0x0000000000002e83      0x3cb misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_abbrev  0x000000000000324e      0x3f2 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_abbrev  0x0000000000003640      0x448 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_abbrev  0x0000000000003a88      0x242 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_abbrev  0x0000000000003cca      0x290 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_abbrev   0x0000000000000000     0x411f
+ .debug_abbrev  0x0000000000000000      0x4c4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_abbrev  0x00000000000004c4      0x2cd misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+ .debug_abbrev  0x0000000000000791      0x127 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_abbrev  0x00000000000008b8      0x301 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_abbrev  0x0000000000000bb9      0x512 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_abbrev  0x00000000000010cb      0x352 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_abbrev  0x000000000000141d      0x42c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_abbrev  0x0000000000001849      0x219 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_abbrev  0x0000000000001a62      0x1ee misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_abbrev  0x0000000000001c50      0x3ef misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_abbrev  0x000000000000203f      0x245 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_abbrev  0x0000000000002284      0x114 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_abbrev  0x0000000000002398      0x38a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_abbrev  0x0000000000002722      0x3af misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_abbrev  0x0000000000002ad1       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_abbrev  0x0000000000002b09      0x25b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_abbrev  0x0000000000002d64       0x78 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_abbrev  0x0000000000002ddc      0x26c misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_abbrev  0x0000000000003048      0x3cb misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_abbrev  0x0000000000003413      0x3f2 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_abbrev  0x0000000000003805      0x448 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_abbrev  0x0000000000003c4d      0x242 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_abbrev  0x0000000000003e8f      0x290 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_loc      0x0000000000000000     0x702e
- .debug_loc     0x0000000000000000       0x84 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_loc     0x0000000000000084      0x282 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_loc     0x0000000000000306      0x653 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_loc     0x0000000000000959      0x659 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_loc     0x0000000000000fb2      0x10f misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_loc     0x00000000000010c1      0xf38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_loc     0x0000000000001ff9      0x738 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_loc     0x0000000000002731     0x1505 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_loc     0x0000000000003c36      0x1e2 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_loc     0x0000000000003e18      0xfd3 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_loc     0x0000000000004deb      0xe82 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_loc     0x0000000000005c6d       0x15 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_loc     0x0000000000005c82      0x109 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_loc     0x0000000000005d8b      0x1a3 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_loc     0x0000000000005f2e      0xaff misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_loc     0x0000000000006a2d      0x3e0 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_loc     0x0000000000006e0d      0x221 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_loc      0x0000000000000000     0x753f
+ .debug_loc     0x0000000000000000      0x595 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_loc     0x0000000000000595      0x282 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_loc     0x0000000000000817      0x653 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_loc     0x0000000000000e6a      0x659 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_loc     0x00000000000014c3      0x10f misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_loc     0x00000000000015d2      0xf38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_loc     0x000000000000250a      0x738 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_loc     0x0000000000002c42     0x1505 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_loc     0x0000000000004147      0x1e2 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_loc     0x0000000000004329      0xfd3 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_loc     0x00000000000052fc      0xe82 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_loc     0x000000000000617e       0x15 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_loc     0x0000000000006193      0x109 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_loc     0x000000000000629c      0x1a3 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_loc     0x000000000000643f      0xaff misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_loc     0x0000000000006f3e      0x3e0 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_loc     0x000000000000731e      0x221 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_aranges  0x0000000000000000      0x8f0
+.debug_aranges  0x0000000000000000      0x930
  .debug_aranges
-                0x0000000000000000       0x28 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+                0x0000000000000000       0x68 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
  .debug_aranges
-                0x0000000000000028       0x20 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+                0x0000000000000068       0x20 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
  .debug_aranges
-                0x0000000000000048       0x90 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+                0x0000000000000088       0x90 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
  .debug_aranges
-                0x00000000000000d8       0xe0 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+                0x0000000000000118       0xe0 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
  .debug_aranges
-                0x00000000000001b8       0xc0 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x00000000000001f8       0xc0 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .debug_aranges
-                0x0000000000000278       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x00000000000002b8       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .debug_aranges
-                0x00000000000002a8       0xa8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x00000000000002e8       0xa8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .debug_aranges
-                0x0000000000000350       0x90 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x0000000000000390       0x90 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .debug_aranges
-                0x00000000000003e0       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x0000000000000420       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
  .debug_aranges
-                0x0000000000000418      0x128 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x0000000000000458      0x128 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .debug_aranges
-                0x0000000000000540       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x0000000000000580       0x38 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .debug_aranges
-                0x0000000000000578       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x00000000000005b8       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
  .debug_aranges
-                0x00000000000005a0       0xa0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x00000000000005e0       0xa0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .debug_aranges
-                0x0000000000000640       0xd8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x0000000000000680       0xd8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
  .debug_aranges
-                0x0000000000000718       0x18 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
+                0x0000000000000758       0x18 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
  .debug_aranges
-                0x0000000000000730       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x0000000000000770       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
  .debug_aranges
-                0x0000000000000750       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+                0x0000000000000790       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
  .debug_aranges
-                0x0000000000000770       0x38 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+                0x00000000000007b0       0x38 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
  .debug_aranges
-                0x00000000000007a8       0x48 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x00000000000007e8       0x48 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
  .debug_aranges
-                0x00000000000007f0       0x40 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x0000000000000830       0x40 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
  .debug_aranges
-                0x0000000000000830       0x50 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+                0x0000000000000870       0x50 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
  .debug_aranges
-                0x0000000000000880       0x20 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+                0x00000000000008c0       0x20 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
  .debug_aranges
-                0x00000000000008a0       0x50 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+                0x00000000000008e0       0x50 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_ranges   0x0000000000000000      0x930
- .debug_ranges  0x0000000000000000       0x18 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_ranges  0x0000000000000018       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
- .debug_ranges  0x0000000000000028       0x80 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_ranges  0x00000000000000a8       0xd0 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_ranges  0x0000000000000178       0xf8 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_ranges  0x0000000000000270       0x50 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_ranges  0x00000000000002c0       0xb0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_ranges  0x0000000000000370       0x80 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_ranges  0x00000000000003f0       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_ranges  0x0000000000000418      0x198 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_ranges  0x00000000000005b0       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_ranges  0x00000000000005d8       0x18 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_ranges  0x00000000000005f0       0xc0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_ranges  0x00000000000006b0       0xc8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_ranges  0x0000000000000778       0x10 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_ranges  0x0000000000000788       0x10 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_ranges  0x0000000000000798       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_ranges  0x00000000000007c0       0x38 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_ranges  0x00000000000007f8       0xa8 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_ranges  0x00000000000008a0       0x40 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_ranges  0x00000000000008e0       0x10 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_ranges  0x00000000000008f0       0x40 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_ranges   0x0000000000000000      0x988
+ .debug_ranges  0x0000000000000000       0x70 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_ranges  0x0000000000000070       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+ .debug_ranges  0x0000000000000080       0x80 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_ranges  0x0000000000000100       0xd0 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_ranges  0x00000000000001d0       0xf8 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_ranges  0x00000000000002c8       0x50 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_ranges  0x0000000000000318       0xb0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_ranges  0x00000000000003c8       0x80 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_ranges  0x0000000000000448       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_ranges  0x0000000000000470      0x198 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_ranges  0x0000000000000608       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_ranges  0x0000000000000630       0x18 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_ranges  0x0000000000000648       0xc0 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_ranges  0x0000000000000708       0xc8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_ranges  0x00000000000007d0       0x10 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_ranges  0x00000000000007e0       0x10 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_ranges  0x00000000000007f0       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_ranges  0x0000000000000818       0x38 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_ranges  0x0000000000000850       0xa8 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_ranges  0x00000000000008f8       0x40 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_ranges  0x0000000000000938       0x10 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_ranges  0x0000000000000948       0x40 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_macro    0x0000000000000000     0xc34d
- .debug_macro   0x0000000000000000      0x6a8 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000006a8      0xab4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000115c       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000117e       0x56 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000011d4       0x51 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001225       0xef misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001314       0x6a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000137e      0x1df misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000155d       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000156d       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000158f       0x73 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001602       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001624       0x1c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001640       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001662       0xdf misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000001741     0x102d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000276e      0x11f misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000288d      0x2c3 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000002b50      0x112 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000002c62       0x11 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000002c73       0x2a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000002c9d       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000002cb3      0x2e6 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000002f99       0x82 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000301b      0x13d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003158      0x198 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000032f0       0x34 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003324       0x58 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000337c      0x236 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000035b2      0x572 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003b24       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003b3a      0x18a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003cc4       0x88 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003d4c      0x1b9 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000003f05      0x1da misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000040df       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000411f       0x1c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000413b       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004169       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004197       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000041b9      0x201 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000043ba       0xe0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000449a      0x34c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000047e6       0xdc misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000048c2       0xc4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004986       0x8f misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004a15       0x94 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004aa9       0xb8 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004b61       0x4c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004bad       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004bc3      0x328 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004eeb       0x3a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004f25       0xd0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000004ff5       0x18 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000500d       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000502f       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000506f       0x64 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000050d3       0x18 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000050eb       0x35 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005120       0x34 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005154       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000516a       0x97 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005201      0x356 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005557       0xf6 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000564d       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000565d       0x58 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000056b5       0x1f misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000056d4       0x43 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005717       0x20 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005737      0x18e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000058c5       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000058d5       0xb6 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000598b       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x00000000000059a1      0x129 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005aca       0x20 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005aea       0xee misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005bd8       0x46 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005c1e       0x52 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005c70       0x1c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005c8c       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005c9c       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005cac       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005cda       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005cfc       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005d0c       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005d1c       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005d5c       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005d6c       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005d7c       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000005daa      0x26c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006016       0x5e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006074       0x12 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006086       0xfa misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006180       0xee misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000626e      0x69a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006908      0x272 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006b7a       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006b8a       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006ba0       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006be0       0x76 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006c56       0x76 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006ccc       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006cdc       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006cfe       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006d14       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006d24       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006d34      0x13d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006e71       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006e81       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006e97       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006ea7       0x7c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006f23       0x64 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000006f87      0x1eb misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000007172      0x2a5 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000007417       0x46 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x000000000000745d       0x28 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_macro   0x0000000000007485      0x696 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
- .debug_macro   0x0000000000007b1b       0x1d misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_macro   0x0000000000007b38      0x168 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000007ca0       0x5e misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000007cfe       0x5c misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000007d5a       0x57 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000007db1       0x10 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000007dc1       0x10 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000007dd1      0x241 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000008012      0x105 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x0000000000008117       0x16 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_macro   0x000000000000812d      0x43d misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_macro   0x000000000000856a      0x42b misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_macro   0x0000000000008995      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_macro   0x0000000000008caa      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_macro   0x0000000000008fbf      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_macro   0x00000000000092d4      0x31b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_macro   0x00000000000095ef      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_macro   0x0000000000009904      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_macro   0x0000000000009c19      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_macro   0x0000000000009f2e      0x327 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_macro   0x000000000000a255       0x17 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_macro   0x000000000000a26c      0x42b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_macro   0x000000000000a697       0x1d misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_macro   0x000000000000a6b4      0x452 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_macro   0x000000000000ab06       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_macro   0x000000000000ab2e      0x47b misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_macro   0x000000000000afa9      0x45b misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_macro   0x000000000000b404       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_macro   0x000000000000b42c      0x54f misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_macro   0x000000000000b97b      0x47d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_macro   0x000000000000bdf8      0x477 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
- .debug_macro   0x000000000000c26f       0xde misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_macro    0x0000000000000000     0xc383
+ .debug_macro   0x0000000000000000      0x6de misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000006de      0xab4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000001192       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000011b4       0x56 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000120a       0x51 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000125b       0xef misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000134a       0x6a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000013b4      0x1df misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000001593       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000015a3       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000015c5       0x73 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000001638       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000165a       0x1c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000001676       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000001698       0xdf misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000001777     0x102d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000027a4      0x11f misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000028c3      0x2c3 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000002b86      0x112 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000002c98       0x11 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000002ca9       0x2a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000002cd3       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000002ce9      0x2e6 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000002fcf       0x82 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003051      0x13d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000318e      0x198 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003326       0x34 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000335a       0x58 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000033b2      0x236 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000035e8      0x572 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003b5a       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003b70      0x18a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003cfa       0x88 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003d82      0x1b9 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000003f3b      0x1da misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004115       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004155       0x1c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004171       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000419f       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000041cd       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000041ef      0x201 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000043f0       0xe0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000044d0      0x34c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000481c       0xdc misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000048f8       0xc4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000049bc       0x8f misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004a4b       0x94 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004adf       0xb8 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004b97       0x4c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004be3       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004bf9      0x328 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004f21       0x3a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000004f5b       0xd0 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000502b       0x18 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005043       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005065       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000050a5       0x64 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005109       0x18 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005121       0x35 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005156       0x34 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000518a       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000051a0       0x97 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005237      0x356 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000558d       0xf6 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005683       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005693       0x58 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000056eb       0x1f misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000570a       0x43 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000574d       0x20 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000576d      0x18e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000058fb       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000590b       0xb6 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000059c1       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000059d7      0x129 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005b00       0x20 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005b20       0xee misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005c0e       0x46 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005c54       0x52 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005ca6       0x1c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005cc2       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005cd2       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005ce2       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005d10       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005d32       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005d42       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005d52       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005d92       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005da2       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005db2       0x2e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000005de0      0x26c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000604c       0x5e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000060aa       0x12 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000060bc       0xfa misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000061b6       0xee misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000062a4      0x69a misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000693e      0x272 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006bb0       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006bc0       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006bd6       0x40 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006c16       0x76 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006c8c       0x76 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006d02       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006d12       0x22 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006d34       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006d4a       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006d5a       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006d6a      0x13d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006ea7       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006eb7       0x16 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006ecd       0x10 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006edd       0x7c misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006f59       0x64 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000006fbd      0x1eb misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000071a8      0x2a5 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x000000000000744d       0x46 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x0000000000007493       0x28 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_macro   0x00000000000074bb      0x696 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+ .debug_macro   0x0000000000007b51       0x1d misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_macro   0x0000000000007b6e      0x168 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000007cd6       0x5e misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000007d34       0x5c misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000007d90       0x57 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000007de7       0x10 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000007df7       0x10 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000007e07      0x241 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000008048      0x105 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x000000000000814d       0x16 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_macro   0x0000000000008163      0x43d misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_macro   0x00000000000085a0      0x42b misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_macro   0x00000000000089cb      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_macro   0x0000000000008ce0      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_macro   0x0000000000008ff5      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_macro   0x000000000000930a      0x31b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_macro   0x0000000000009625      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_macro   0x000000000000993a      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_macro   0x0000000000009c4f      0x315 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_macro   0x0000000000009f64      0x327 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_macro   0x000000000000a28b       0x17 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_macro   0x000000000000a2a2      0x42b misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_macro   0x000000000000a6cd       0x1d misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_macro   0x000000000000a6ea      0x452 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_macro   0x000000000000ab3c       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_macro   0x000000000000ab64      0x47b misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_macro   0x000000000000afdf      0x45b misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_macro   0x000000000000b43a       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_macro   0x000000000000b462      0x54f misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_macro   0x000000000000b9b1      0x47d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_macro   0x000000000000be2e      0x477 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+ .debug_macro   0x000000000000c2a5       0xde misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_line     0x0000000000000000     0xf6f5
- .debug_line    0x0000000000000000     0x1077 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_line    0x0000000000001077     0x1040 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
- .debug_line    0x00000000000020b7      0x267 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_line    0x000000000000231e      0x6a0 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_line    0x00000000000029be      0xdb2 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_line    0x0000000000003770      0x949 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_line    0x00000000000040b9      0xf0f misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_line    0x0000000000004fc8      0xac4 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_line    0x0000000000005a8c      0x7d8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_line    0x0000000000006264     0x147c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_line    0x00000000000076e0      0x963 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_line    0x0000000000008043      0x751 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_line    0x0000000000008794     0x128a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_line    0x0000000000009a1e     0x1083 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_line    0x000000000000aaa1       0x44 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_line    0x000000000000aae5      0x88a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_line    0x000000000000b36f       0x6f misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_line    0x000000000000b3de      0x9aa misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_line    0x000000000000bd88      0xace misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_line    0x000000000000c856      0xc62 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_line    0x000000000000d4b8      0xd75 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_line    0x000000000000e22d      0x97b misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_line    0x000000000000eba8      0xb4d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_line     0x0000000000000000     0xf9eb
+ .debug_line    0x0000000000000000     0x136d misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_line    0x000000000000136d     0x1040 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+ .debug_line    0x00000000000023ad      0x267 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_line    0x0000000000002614      0x6a0 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_line    0x0000000000002cb4      0xdb2 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_line    0x0000000000003a66      0x949 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_line    0x00000000000043af      0xf0f misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_line    0x00000000000052be      0xac4 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_line    0x0000000000005d82      0x7d8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_line    0x000000000000655a     0x147c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_line    0x00000000000079d6      0x963 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_line    0x0000000000008339      0x751 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_line    0x0000000000008a8a     0x128a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_line    0x0000000000009d14     0x1083 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_line    0x000000000000ad97       0x44 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_line    0x000000000000addb      0x88a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_line    0x000000000000b665       0x6f misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_line    0x000000000000b6d4      0x9aa misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_line    0x000000000000c07e      0xace misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_line    0x000000000000cb4c      0xc62 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_line    0x000000000000d7ae      0xd75 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_line    0x000000000000e523      0x97b misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_line    0x000000000000ee9e      0xb4d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_str      0x0000000000000000    0x27940
- .debug_str     0x0000000000000000    0x235fe misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
-                                      0x239cb (size before relaxing)
- .debug_str     0x00000000000235fe       0x4e misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
-                                      0x23977 (size before relaxing)
- .debug_str     0x000000000002364c      0x212 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+.debug_str      0x0000000000000000    0x27dbc
+ .debug_str     0x0000000000000000    0x23ebf misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+                                      0x2436d (size before relaxing)
+ .debug_str     0x0000000000023ebf       0x43 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+                                      0x23a1f (size before relaxing)
+ .debug_str     0x0000000000023f02      0x212 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
                                        0x3016 (size before relaxing)
- .debug_str     0x000000000002385e      0x894 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_str     0x0000000000024114      0x894 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
                                        0x6cc9 (size before relaxing)
- .debug_str     0x00000000000240f2      0x9bd misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_str     0x00000000000249a8      0x953 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
                                       0x1b73c (size before relaxing)
- .debug_str     0x0000000000024aaf      0x352 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_str     0x00000000000252fb      0x336 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
                                       0x1b0b7 (size before relaxing)
- .debug_str     0x0000000000024e01      0x3cf misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_str     0x0000000000025631      0x3cf misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
                                       0x1775d (size before relaxing)
- .debug_str     0x00000000000251d0      0x14a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_str     0x0000000000025a00      0x14a misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
                                       0x170f8 (size before relaxing)
- .debug_str     0x000000000002531a      0x131 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_str     0x0000000000025b4a      0x131 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
                                       0x1764d (size before relaxing)
- .debug_str     0x000000000002544b      0x516 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_str     0x0000000000025c7b      0x516 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
                                       0x17b20 (size before relaxing)
- .debug_str     0x0000000000025961       0xbc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_str     0x0000000000026191       0xbc misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
                                       0x175ae (size before relaxing)
- .debug_str     0x0000000000025a1d       0x42 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_str     0x000000000002624d       0x42 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
                                       0x168af (size before relaxing)
- .debug_str     0x0000000000025a5f      0x3e8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_str     0x000000000002628f      0x3e8 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
                                       0x172ee (size before relaxing)
- .debug_str     0x0000000000025e47      0x584 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_str     0x0000000000026677      0x584 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
                                       0x1788f (size before relaxing)
- .debug_str     0x00000000000263cb       0x43 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_str     0x0000000000026bfb       0x43 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/crp.o
                                        0x2e16 (size before relaxing)
- .debug_str     0x000000000002640e       0xb9 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_str     0x0000000000026c3e       0xb9 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
                                       0x1a389 (size before relaxing)
- .debug_str     0x00000000000264c7       0x56 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_str     0x0000000000026cf7       0x56 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
                                        0x2e71 (size before relaxing)
- .debug_str     0x000000000002651d       0xcd misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_str     0x0000000000026d4d       0xcd misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
                                       0x1b0ab (size before relaxing)
- .debug_str     0x00000000000265ea      0x496 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_str     0x0000000000026e1a      0x15f misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
                                       0x1b587 (size before relaxing)
- .debug_str     0x0000000000026a80      0x182 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_str     0x0000000000026f79      0x105 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
                                       0x1b3b6 (size before relaxing)
- .debug_str     0x0000000000026c02      0x771 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_str     0x000000000002707e      0x771 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
                                       0x21237 (size before relaxing)
- .debug_str     0x0000000000027373       0x2d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_str     0x00000000000277ef       0x2d misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
                                       0x1a8d8 (size before relaxing)
- .debug_str     0x00000000000273a0      0x5a0 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+ .debug_str     0x000000000002781c      0x5a0 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
                                       0x1ac49 (size before relaxing)
 
 .comment        0x0000000000000000       0x68
@@ -17583,33 +17607,33 @@ OUTPUT(misProgramas/steppermotor_L297/out/steppermotor_L297.elf elf32-littlearm)
  .ARM.attributes
                 0x0000000000000555       0x34 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
-.debug_frame    0x0000000000000000     0x15d0
- .debug_frame   0x0000000000000000       0x38 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
- .debug_frame   0x0000000000000038       0x28 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
- .debug_frame   0x0000000000000060      0x114 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_frame   0x0000000000000174      0x1d8 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
- .debug_frame   0x000000000000034c      0x204 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_frame   0x0000000000000550       0x5c misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_frame   0x00000000000005ac      0x1f4 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_frame   0x00000000000007a0      0x178 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_frame   0x0000000000000918       0x70 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_frame   0x0000000000000988      0x31c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_frame   0x0000000000000ca4       0x80 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_frame   0x0000000000000d24       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_frame   0x0000000000000d54      0x198 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_frame   0x0000000000000eec      0x278 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_frame   0x0000000000001164       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_frame   0x000000000000118c       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_frame   0x00000000000011ac       0x74 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_frame   0x0000000000001220       0x84 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_frame   0x00000000000012a4       0xb4 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_frame   0x0000000000001358       0xb8 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_frame   0x0000000000001410       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_frame   0x0000000000001438       0xec misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
- .debug_frame   0x0000000000001524       0x2c /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x0000000000001550       0x34 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000001584       0x2c /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000000000015b0       0x20 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+.debug_frame    0x0000000000000000     0x167c
+ .debug_frame   0x0000000000000000       0xe4 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+ .debug_frame   0x00000000000000e4       0x28 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+ .debug_frame   0x000000000000010c      0x114 misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_frame   0x0000000000000220      0x1d8 misProgramas/steppermotor_L297/out/libs/sys_newlib//src/system.o
+ .debug_frame   0x00000000000003f8      0x204 misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_frame   0x00000000000005fc       0x5c misProgramas/steppermotor_L297/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_frame   0x0000000000000658      0x1f4 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_frame   0x000000000000084c      0x178 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_frame   0x00000000000009c4       0x70 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_frame   0x0000000000000a34      0x31c misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_frame   0x0000000000000d50       0x80 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_frame   0x0000000000000dd0       0x30 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_frame   0x0000000000000e00      0x198 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_frame   0x0000000000000f98      0x278 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_frame   0x0000000000001210       0x28 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_frame   0x0000000000001238       0x20 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_frame   0x0000000000001258       0x74 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_frame   0x00000000000012cc       0x84 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_frame   0x0000000000001350       0xb4 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_frame   0x0000000000001404       0xb8 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_frame   0x00000000000014bc       0x28 misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_frame   0x00000000000014e4       0xec misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+ .debug_frame   0x00000000000015d0       0x2c /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00000000000015fc       0x34 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000001630       0x2c /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x000000000000165c       0x20 /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
 
 Cross Reference Table
 
@@ -17979,11 +18003,14 @@ Chip_SystemInit                                   misProgramas/steppermotor_L297
 Chip_TIMER_DeInit                                 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/timer_18xx_43xx.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_timer.o
 Chip_TIMER_ExtMatchControlSet                     misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/timer_18xx_43xx.o
+                                                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 Chip_TIMER_Init                                   misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/timer_18xx_43xx.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_timer.o
                                                   misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/stopwatch_18xx_43xx.o
+                                                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 Chip_TIMER_Reset                                  misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/timer_18xx_43xx.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_timer.o
+                                                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 Chip_UART_ABCmd                                   misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
 Chip_UART_CheckBusy                               misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
 Chip_UART_DeInit                                  misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
@@ -18160,7 +18187,7 @@ SystemInit                                        misProgramas/steppermotor_L297
                                                   misProgramas/steppermotor_L297/out/libs/cmsis_core//src/armv7m_startup.o
 TIMER0_IRQHandler                                 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
 TIMER1_IRQHandler                                 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
-TIMER2_IRQHandler                                 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+TIMER2_IRQHandler                                 misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 TIMER3_IRQHandler                                 misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
 ThitaBitmap                                       misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/display/fonts/greek_chars_5x7/src/lcd_greek_chars.o
 Timer_DeInit                                      misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_timer.o
@@ -18624,6 +18651,7 @@ gpioInit                                          misProgramas/steppermotor_L297
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/display/lcd/src/sapi_lcd.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
                                                   misProgramas/steppermotor_L297/out/libs/plc//src/PLC_Hardware.o
+                                                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 gpioPinsInit                                      misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
 gpioRead                                          misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/temperature_humudity/dht11/src/sapi_dht11.o
@@ -18633,6 +18661,7 @@ gpioRead                                          misProgramas/steppermotor_L297
                                                   misProgramas/steppermotor_L297/out/libs/plc//src/PLC_Hardware.o
 gpioToggle                                        misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
                                                   misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
+                                                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 gpioWrite                                         misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/ultrasonic/hcsr04/src/sapi_ultrasonic_hcsr04.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/temperature_humudity/dht11/src/sapi_dht11.o
@@ -18644,6 +18673,7 @@ gpioWrite                                         misProgramas/steppermotor_L297
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/display/lcd/src/sapi_lcd.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/usbd_keyboard.o
                                                   misProgramas/steppermotor_L297/out/libs/plc//src/PLC_Hardware.o
+                                                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 greekChars                                        misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/display/fonts/greek_chars_5x7/src/lcd_greek_chars.o
 handleMasterXferState                             misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
 handleSlaveXferState                              misProgramas/steppermotor_L297/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
@@ -18833,7 +18863,13 @@ stdioPrintf                                       misProgramas/steppermotor_L297
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/wifi/esp8266_at/src/sapi_esp8266.o
 stdioSprintf                                      misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_stdio.o
                                                   misProgramas/steppermotor_L297/out/libs/sapi/sapi_v0.5.2/external_peripherals/wifi/esp8266_at/src/sapi_esp8266.o
+stepperMotorL297GetDireccionGiro                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+stepperMotorL297GetEnable                         misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 stepperMotorL297Init                              misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+stepperMotorL297MoveXNanometers                   misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+stepperMotorL297SetDireccionGiro                  misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+stepperMotorL297SetEnable                         misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
+stepperMotorL297SetVelocidad                      misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 steppermotor                                      misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/main.o
                                                   misProgramas/steppermotor_L297/out/misProgramas/steppermotor_L297/src/steppermotor_l297.o
 strcat                                            /home/sebastian/CIAA/CIAA_Software_1.0-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-strcat.o)

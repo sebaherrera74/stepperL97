@@ -31,12 +31,14 @@ extern "C" {
 #define MEDIA   1000000
 #define ALTA    300000
 
+//Definiciones de .....
+
+#define PASO_MINIMO   0
+#define PASO_MAXIMO   12600   //Esta es la cantidad maxima de pasos que dara el motor
+#define NANOMT_XPASO  12      //Esto me da la cantidad de pasos x 1 nanometro que el motor tiene que girar
+
 /*=====[Macros estilo funcion publicas]======================================*/
 
-#define printInt(printer,number) printIntFormat((printer),(number),(DEC_FORMAT))
-
-#define printlnString(printer,string);   {printString((printer),(string));\
-                                          printEnter((printer));}
 
 /*=====[Definiciones de tipos de datos publicos]=============================*/
 
@@ -53,6 +55,25 @@ typedef enum {
    velocidad_alta
 } steppermotor_l297_velocidad;
 
+typedef enum {
+   sentido_cw,      //direccion en las agujas del reloj
+   sentido_ccw      //direccion en sentido contrario a las agujas del reloj
+} steppermotor_l297_direccion;
+
+typedef enum {
+   motor_enable,     //motor habilitado
+   motor_disable     //motor deshabilitado
+} steppermotor_l297_enable;
+
+typedef enum {
+	motor_estado_inicial,     //motor en estado inicial
+	motor_estado_avance,     //motor en estado de avance o girnado en sentido de las agujas del reloj
+	motor_estado_retroceso,   //motor en estado de avance o girnado en sentido contrario de las agujas del reloj
+	motor_estado_final
+} steppermotor_l297_estadosmotor;
+
+
+
 
 // Tipo de datos estructurados, union o campo de bits
 typedef struct {
@@ -61,12 +82,15 @@ typedef struct {
 	uint32_t contador_pasos;
 	uint8_t  Numeros_pasosxvuelta;
 	float   angulo_resolucion;
-	gpioMap_t half_full_step;
-	gpioMap_t reset;
-	gpioMap_t direccion;           //sentido agujas del reloj Horario (CW) o antihorario (CCW)
-	gpioMap_t enable;
+	gpioMap_t Gpiohalf_full_step;
+	gpioMap_t Gpioreset;
+	gpioMap_t Gpiodireccion;           //sentido agujas del reloj Horario (CW) o antihorario (CCW)
+	gpioMap_t Gpioenable;
 	gpioMap_t control;
+	steppermotor_l297_direccion direccion;
 	steppermotor_l297_velocidad velocidad;
+	steppermotor_l297_enable enable;
+
 } steppermotor_l297_t;
 
 steppermotor_l297_t  steppermotor;
@@ -75,13 +99,27 @@ steppermotor_l297_t  steppermotor;
 /*=====[Prototipos de funciones publicas]====================================*/
 
 //Funcion de inicializacion del motor paso a paso a utilizar, se pasa una structura , los numeros de pasos
-//por vuelta y el angulo de resolucion
+//por vuelta
 //Tambien esta funcion inicializa el Timer() para generar el clock
 //seguir agregando lo que hace el timer
 
-void stepperMotorL297Init(steppermotor_l297_t *steppermotor,uint32_t numerodepasosxvuelta);
+void stepperMotorL297Init(steppermotor_l297_t *steppermotor,uint32_t numerodepasosxvuelta,
+		                  gpioMap_t enable,gpioMap_t reset,gpioMap_t half_full,gpioMap_t cw_ccw);
 
+//Funcion para setear la velocidad
+void stepperMotorL297SetVelocidad(steppermotor_l297_t *steppermotor,steppermotor_l297_velocidad velocidad);
 
+//Funcion para determinar el sentido de Giro
+void stepperMotorL297SetDireccionGiro(steppermotor_l297_t *steppermotor,steppermotor_l297_direccion direcciongiro);
+
+//Funcion que me devuelve el sentido de giro en el que esta el motor
+steppermotor_l297_direccion stepperMotorL297GetDireccionGiro(steppermotor_l297_t *steppermotor);
+
+//Funcion que habilita el motor o lo deshabilita
+void stepperMotorL297SetEnable(steppermotor_l297_t *steppermotor,steppermotor_l297_enable habilitacion );
+
+//Funcion que me dice si el motor esta habilitado o deshabilitado
+steppermotor_l297_enable stepperMotorL297GetEnable(steppermotor_l297_t *steppermotor);
 
 /*=====[Prototipos de funciones publicas de interrupcion]====================*/
 
