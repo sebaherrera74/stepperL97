@@ -66,6 +66,17 @@ typedef enum {
 } steppermotor_l297_enable;
 
 typedef enum {
+   l297_set,       //set l297
+   l297_reset      //reset l297
+} steppermotor_l297_set_reset;
+
+typedef enum {
+   l297_half,     //half l297
+   l297_full      //full l297
+} steppermotor_l297_half_full;
+
+
+typedef enum {
 	motor_estado_inicial,     //motor en estado inicial
 	motor_estado_avance,     //motor en estado de avance o girnado en sentido de las agujas del reloj
 	motor_estado_retroceso,   //motor en estado de avance o girnado en sentido contrario de las agujas del reloj
@@ -80,7 +91,7 @@ typedef struct {
 
 	uint32_t cantidad_pasos;
 	uint32_t contador_pasos;
-	uint8_t  Numeros_pasosxvuelta;
+	float  Numeros_pasosxvuelta;
 	float   angulo_resolucion;
 	gpioMap_t Gpiohalf_full_step;
 	gpioMap_t Gpioreset;
@@ -90,7 +101,9 @@ typedef struct {
 	steppermotor_l297_direccion direccion;
 	steppermotor_l297_velocidad velocidad;
 	steppermotor_l297_enable enable;
-
+	steppermotor_l297_estadosmotor estado_motor;
+	steppermotor_l297_set_reset set_reset_l297;  //Variable para saber si l297 esta en set o reset
+	steppermotor_l297_half_full half_full_l297;  //Varaible para saber si L297 esta en modo half o full
 } steppermotor_l297_t;
 
 steppermotor_l297_t  steppermotor;
@@ -121,6 +134,20 @@ void stepperMotorL297SetEnable(steppermotor_l297_t *steppermotor,steppermotor_l2
 //Funcion que me dice si el motor esta habilitado o deshabilitado
 steppermotor_l297_enable stepperMotorL297GetEnable(steppermotor_l297_t *steppermotor);
 
+//Funcion para setear o resetear el L297 de acuerdo al pin especicificado en la funcion init
+void stepperMotorL297SetReset(steppermotor_l297_t *steppermotor,steppermotor_l297_set_reset setreset);
+
+//Funcion para saber en estado esta el L297 si esta set o reset
+steppermotor_l297_set_reset stepperMotorL297Get_SetReset(steppermotor_l297_t *steppermotor);
+
+//Funcion para elegir el modo half o full del CI l297
+void stepperMotorL297SetFullHalf(steppermotor_l297_t *steppermotor,steppermotor_l297_half_full secuenciapasos);
+
+//Funcion para ver en que modo de secuencia estamos trabajando
+steppermotor_l297_half_full stepperMotorL297GetHalfFull(steppermotor_l297_t *steppermotor);
+
+//Funcion para mover el motor
+void stepperMotorL297MoveXNanometers(steppermotor_l297_t *steppermotor,uint32_t LongOnda);
 /*=====[Prototipos de funciones publicas de interrupcion]====================*/
 
 void UART0_IRQHandler(void);

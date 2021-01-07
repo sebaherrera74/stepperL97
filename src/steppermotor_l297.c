@@ -160,6 +160,7 @@ void stepperMotorL297SetDireccionGiro(steppermotor_l297_t *steppermotor,stepperm
 	}
 }
 
+
 steppermotor_l297_direccion stepperMotorL297GetDireccionGiro(steppermotor_l297_t *steppermotor){
 
 	return steppermotor->direccion;
@@ -192,6 +193,59 @@ steppermotor_l297_enable stepperMotorL297GetEnable(steppermotor_l297_t *stepperm
 
 	return steppermotor->enable;
 }
+
+void stepperMotorL297SetReset(steppermotor_l297_t *steppermotor,steppermotor_l297_set_reset setreset){
+
+	switch (setreset){
+
+		case l297_set:
+			gpioWrite(steppermotor->Gpioreset,ON);
+			steppermotor->set_reset_l297=setreset;
+			break;
+
+		case l297_reset:
+			gpioWrite(steppermotor->Gpioreset,OFF);
+			steppermotor->set_reset_l297=setreset;
+			break;
+
+		default:
+			gpioWrite(steppermotor->Gpioreset,ON);
+			steppermotor->set_reset_l297=setreset;
+			break;
+		}
+}
+
+steppermotor_l297_set_reset stepperMotorL297Get_SetReset(steppermotor_l297_t *steppermotor){
+
+	return steppermotor->set_reset_l297;
+}
+
+void stepperMotorL297SetFullHalf(steppermotor_l297_t *steppermotor,steppermotor_l297_half_full secuenciapasos){
+
+	switch (secuenciapasos){
+
+		case l297_half:
+			gpioWrite(steppermotor->Gpiohalf_full_step,ON);
+			steppermotor->half_full_l297=secuenciapasos;
+			break;
+
+		case l297_full:
+			gpioWrite(steppermotor->Gpiohalf_full_step,OFF);
+			steppermotor->half_full_l297=secuenciapasos;
+			break;
+
+		default:
+			gpioWrite(steppermotor->Gpiohalf_full_step,ON);
+			steppermotor->half_full_l297=secuenciapasos;
+			break;
+		}
+}
+
+steppermotor_l297_half_full stepperMotorL297GetHalfFull(steppermotor_l297_t *steppermotor){
+
+	return steppermotor->half_full_l297;
+}
+
 
 
 void stepperMotorL297SetVelocidad(steppermotor_l297_t *steppermotor,steppermotor_l297_velocidad velocidad){
@@ -235,6 +289,64 @@ void stepperMotorL297SetVelocidad(steppermotor_l297_t *steppermotor,steppermotor
  * el instrumento tiene 0- a 1050 Nanometros o sea seria de 0 a 12600 pasos
 */
 void stepperMotorL297MoveXNanometers(steppermotor_l297_t *steppermotor,uint32_t LongOnda){
+
+	uint8_t flag=1;
+
+	PosicionDeseada=LongOnda*NANOMT_XPASO;
+
+	if (PosicionDeseada==PosicionActual){
+		steppermotor->estado_motor=motor_estado_inicial;
+		}
+	else {
+		if (PosicionDeseada>PosicionActual){
+			if (PosicionDeseada>PASO_MAXIMO){ //Si el valor es mayor al maximo que tiene el motor deshabilito el mismo
+				steppermotor->estado_motor=motor_estado_final;
+			}
+			else{
+				steppermotor->estado_motor=motor_estado_avance;
+
+			}
+		}
+	}
+
+	while (flag){
+	switch (steppermotor->estado_motor){
+
+		case motor_estado_inicial:
+			//Ver que hacemos aqui
+            flag=0;
+			break;
+
+		case motor_estado_avance:
+			//habilito el motor
+			stepperMotorL297SetEnable(steppermotor,motor_enable);
+			//habilito giro en sentido agujas de reloj
+			stepperMotorL297SetDireccionGiro(steppermotor,sentido_cw);
+            //lanzo timmer
+			signalStart();
+			while(countIrq<2*PosicionDeseada); //Quedo en un lazo cerrado hasta que cuente las interrupciones con la posiciondeseada
+			steppermotor->estado_motor=motor_estado_final;
+
+			break;
+
+		case motor_estado_retroceso:
+
+			break;
+
+		case motor_estado_final:
+			stepperMotorL297SetEnable(steppermotor,motor_disable );
+			signalStop();
+			countIrq=0;
+			PosicionActual=PosicionDeseada;
+			flag=0;
+
+			break;
+
+		default:
+
+			break;
+		}
+	}
 
 }
 

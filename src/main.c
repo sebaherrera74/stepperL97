@@ -25,7 +25,7 @@
 
 
 /*=====[Definiciones de variables globales publicas]=========================*/
-uint32_t cantidadPasos=960;
+uint32_t cantidadPasos;
 
 /*=====[Definiciones de variables globales privadas]=========================*/
 
@@ -37,12 +37,26 @@ int main( void )
 
    // ----- Setup -----------------------------------
    boardInit();
+   stepperMotorL297Init(&steppermotor,48,GPIO0,GPIO1,GPIO2,GPIO4);
+   stepperMotorL297SetVelocidad(&steppermotor,velocidad_media);
 
+   //Pruebas de sentido de giro
+   stepperMotorL297SetDireccionGiro(&steppermotor,sentido_cw); //Pruebo las salidas ,Pone a 3,3 vel Gpio
+   stepperMotorL297SetDireccionGiro(&steppermotor,sentido_ccw);//Pone a 0 Volts
+
+   stepperMotorL297SetEnable(&steppermotor,motor_enable);    //Pruebo habilitacion o deshabilitacion Pone 3,3 Volts
+   stepperMotorL297SetEnable(&steppermotor,motor_disable );  //Pone 0 v
+
+   stepperMotorL297SetReset(&steppermotor,l297_set);       //Pruebo set o REset, Pone 3,3 Volts
+   stepperMotorL297SetReset(&steppermotor,l297_reset);     //Pone a 0 v
 
    // ----- Repeat for ever -------------------------
    while( true ) {
 
+	if (!gpioRead(TEC1)){
+		stepperMotorL297MoveXNanometers(&steppermotor,400);
 
+	}
 	   delay(250);
 	   gpioToggle(LED1);
 
