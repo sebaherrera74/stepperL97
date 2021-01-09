@@ -34,6 +34,7 @@ uint32_t cantidadPasos;
 /*=====[Funcion principal, punto de entrada al programa luego de encender]===*/
 int main( void )
 {
+   steppermotor_l297_half_full  volatile var=0;         //Hay que colocar volatile sino el compilador la optimiza
 
    // ----- Setup -----------------------------------
    boardInit();
@@ -49,6 +50,13 @@ int main( void )
 
    stepperMotorL297SetReset(&steppermotor,l297_set);       //Pruebo set o REset, Pone 3,3 Volts
    stepperMotorL297SetReset(&steppermotor,l297_reset);     //Pone a 0 v
+
+   stepperMotorL297SetFullHalf(&steppermotor,l297_half);
+   stepperMotorL297SetFullHalf(&steppermotor,l297_full);
+
+   var=stepperMotorL297GetHalfFull(&steppermotor);
+
+   delay(1);
 
    // ----- Repeat for ever -------------------------
    while( true ) {

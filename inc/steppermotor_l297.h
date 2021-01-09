@@ -88,7 +88,6 @@ typedef enum {
 
 // Tipo de datos estructurados, union o campo de bits
 typedef struct {
-
 	uint32_t cantidad_pasos;
 	uint32_t contador_pasos;
 	float  Numeros_pasosxvuelta;
