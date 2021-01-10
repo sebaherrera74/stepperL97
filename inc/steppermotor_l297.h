@@ -145,8 +145,17 @@ void stepperMotorL297SetFullHalf(steppermotor_l297_t *steppermotor,steppermotor_
 //Funcion para ver en que modo de secuencia estamos trabajando
 steppermotor_l297_half_full stepperMotorL297GetHalfFull(steppermotor_l297_t *steppermotor);
 
-//Funcion para mover el motor
+/*Funcion para girar el motor de acuerdo a la longitud de onda seleccionada
+ *De acuerdo a la longitud seleccionada girara en el sentido de las agujas del reloj o en sentido contrario
+*/
 void stepperMotorL297MoveXNanometers(steppermotor_l297_t *steppermotor,uint32_t LongOnda);
+
+
+
+
+
+
+
 /*=====[Prototipos de funciones publicas de interrupcion]====================*/
 
 void UART0_IRQHandler(void);

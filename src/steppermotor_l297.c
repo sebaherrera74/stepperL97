@@ -108,8 +108,8 @@ static void funPrivada(void);
 
 void stepperMotorL297Init(steppermotor_l297_t *steppermotor,uint32_t numerodepasosxvuelta,
 						  gpioMap_t enable,gpioMap_t reset,gpioMap_t half_full,gpioMap_t cw_ccw){
-                      //   GPIO0             GPIO1             GPIO2              GPIO4
-
+                      //   GPIO4             GPIO1             GPIO2              GPIO5
+                      //Cambio los gpios me coinciden con los del lcd
 
 	if (numerodepasosxvuelta!=0){
 		steppermotor->Numeros_pasosxvuelta=numerodepasosxvuelta;
@@ -300,13 +300,17 @@ void stepperMotorL297MoveXNanometers(steppermotor_l297_t *steppermotor,uint32_t 
 	else {
 		if (PosicionDeseada>PosicionActual){
 			if (PosicionDeseada>PASO_MAXIMO){ //Si el valor es mayor al maximo que tiene el motor deshabilito el mismo
-				steppermotor->estado_motor=motor_estado_final;
+				steppermotor->estado_motor=motor_estado_final;  //Aqui habria que enviar un mensaje de error, diciendo que supera el valor maximo
 			}
 			else{
 				steppermotor->estado_motor=motor_estado_avance;
-
 			}
 		}
+		else{
+			steppermotor->estado_motor=motor_estado_retroceso;
+			DiferenciaPosicion=PosicionActual-PosicionDeseada; //Calculo la diferencia es lo que tendria que "retroceder" el motor
+
+			}
 	}
 
 	while (flag){
@@ -324,12 +328,21 @@ void stepperMotorL297MoveXNanometers(steppermotor_l297_t *steppermotor,uint32_t 
 			stepperMotorL297SetDireccionGiro(steppermotor,sentido_cw);
             //lanzo timmer
 			signalStart();
-			while(countIrq<2*PosicionDeseada); //Quedo en un lazo cerrado hasta que cuente las interrupciones con la posiciondeseada
+			while(countIrq<=2*PosicionDeseada); //Quedo en un lazo cerrado hasta que cuente las interrupciones con la posiciondeseada
 			steppermotor->estado_motor=motor_estado_final;
 
 			break;
 
 		case motor_estado_retroceso:
+			//habilito el motor
+			stepperMotorL297SetEnable(steppermotor,motor_enable);
+			//habilito giro en sentido contrario a las  agujas de reloj
+			stepperMotorL297SetDireccionGiro(steppermotor,sentido_ccw);
+			//lanzo timmer
+			signalStart();
+			while(countIrq<=2*DiferenciaPosicion); //Quedo en un lazo cerrado hasta que cuente las interrupciones con la posiciondeseada
+			steppermotor->estado_motor=motor_estado_final;
+
 
 			break;
 

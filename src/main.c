@@ -38,7 +38,7 @@ int main( void )
 
    // ----- Setup -----------------------------------
    boardInit();
-   stepperMotorL297Init(&steppermotor,48,GPIO0,GPIO1,GPIO2,GPIO4);
+   stepperMotorL297Init(&steppermotor,48,GPIO4,GPIO7,GPIO6,GPIO5);
    stepperMotorL297SetVelocidad(&steppermotor,velocidad_media);
 
    //Pruebas de sentido de giro
@@ -61,10 +61,19 @@ int main( void )
    // ----- Repeat for ever -------------------------
    while( true ) {
 
-	if (!gpioRead(TEC1)){
-		stepperMotorL297MoveXNanometers(&steppermotor,400);
+	   if (!gpioRead(TEC1)){
+		   stepperMotorL297MoveXNanometers(&steppermotor,48);
+	   }
+	   if (!gpioRead(TEC2)){
+		   stepperMotorL297MoveXNanometers(&steppermotor,0);
+	   }
+	   if (!gpioRead(TEC3)){
+		   stepperMotorL297MoveXNanometers(&steppermotor,900);
+	   }
+	   if (!gpioRead(TEC4)){
+		   stepperMotorL297MoveXNanometers(&steppermotor,100);
+	   }
 
-	}
 	   delay(250);
 	   gpioToggle(LED1);
 
